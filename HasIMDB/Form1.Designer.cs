@@ -45,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pboPhoto = new System.Windows.Forms.PictureBox();
             this.lstFilmler = new System.Windows.Forms.ListBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.gboPuan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboPhoto)).BeginInit();
@@ -121,6 +122,7 @@
             this.rbPuanYok.TabStop = true;
             this.rbPuanYok.Text = "Puansız";
             this.rbPuanYok.UseVisualStyleBackColor = true;
+            this.rbPuanYok.CheckedChanged += new System.EventHandler(this.rbPuanYok_CheckedChanged);
             // 
             // label2
             // 
@@ -143,6 +145,7 @@
             this.rbPuan5.Tag = "5";
             this.rbPuan5.Text = "5 - Çok İyi";
             this.rbPuan5.UseVisualStyleBackColor = true;
+            this.rbPuan5.CheckedChanged += new System.EventHandler(this.rbPuanYok_CheckedChanged);
             // 
             // rbPuan1
             // 
@@ -155,6 +158,7 @@
             this.rbPuan1.Tag = "1";
             this.rbPuan1.Text = "1 - Çok Kötü";
             this.rbPuan1.UseVisualStyleBackColor = true;
+            this.rbPuan1.CheckedChanged += new System.EventHandler(this.rbPuanYok_CheckedChanged);
             // 
             // rbPuan2
             // 
@@ -167,6 +171,7 @@
             this.rbPuan2.Tag = "2";
             this.rbPuan2.Text = "2 - Kötü";
             this.rbPuan2.UseVisualStyleBackColor = true;
+            this.rbPuan2.CheckedChanged += new System.EventHandler(this.rbPuanYok_CheckedChanged);
             // 
             // rbPuan4
             // 
@@ -179,6 +184,7 @@
             this.rbPuan4.Tag = "4";
             this.rbPuan4.Text = "4 - İyi";
             this.rbPuan4.UseVisualStyleBackColor = true;
+            this.rbPuan4.CheckedChanged += new System.EventHandler(this.rbPuanYok_CheckedChanged);
             // 
             // rbPuan3
             // 
@@ -191,6 +197,7 @@
             this.rbPuan3.Tag = "3";
             this.rbPuan3.Text = "3 - Orta";
             this.rbPuan3.UseVisualStyleBackColor = true;
+            this.rbPuan3.CheckedChanged += new System.EventHandler(this.rbPuanYok_CheckedChanged);
             // 
             // label3
             // 
@@ -210,6 +217,7 @@
             this.txtFilmAd.Size = new System.Drawing.Size(167, 24);
             this.txtFilmAd.TabIndex = 2;
             this.txtFilmAd.TextChanged += new System.EventHandler(this.txtFilmAd_TextChanged);
+            this.txtFilmAd.Leave += new System.EventHandler(this.txtFilmAd_Leave);
             // 
             // label1
             // 
@@ -223,15 +231,18 @@
             // pboPhoto
             // 
             this.pboPhoto.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pboPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pboPhoto.Location = new System.Drawing.Point(203, 113);
             this.pboPhoto.Name = "pboPhoto";
             this.pboPhoto.Size = new System.Drawing.Size(175, 189);
             this.pboPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pboPhoto.TabIndex = 0;
             this.pboPhoto.TabStop = false;
+            this.pboPhoto.Click += new System.EventHandler(this.pboPhoto_Click);
             // 
             // lstFilmler
             // 
+            this.lstFilmler.DisplayMember = "id";
             this.lstFilmler.FormattingEnabled = true;
             this.lstFilmler.ItemHeight = 18;
             this.lstFilmler.Location = new System.Drawing.Point(430, 12);
@@ -240,6 +251,12 @@
             this.lstFilmler.TabIndex = 0;
             this.lstFilmler.ValueMember = "id";
             this.lstFilmler.SelectedIndexChanged += new System.EventHandler(this.lstFilmler_SelectedIndexChanged);
+            this.lstFilmler.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstFilmler_KeyDown);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Resim Dosyaları (*.BMP;*.JPG;*.PNG;*.GIF)|*.BMP;*.JPG;*.JPEG;*.PNG;*.GIF";
             // 
             // Form1
             // 
@@ -280,6 +297,7 @@
         private System.Windows.Forms.TextBox txtFilmId;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton rbPuanYok;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
